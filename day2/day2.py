@@ -55,7 +55,7 @@ def part2(lines):
         pos1 = int(pos1) - 1
         pos2 = int(pos2) - 1
 
-        # Check if either position has pwd but not both! 
+        # Check if either position has char but not both! 
         if (pwd[pos1] == char and pwd[pos2] != char) or (pwd[pos1] != char and pwd[pos2] == char):
            
            # Increment 
