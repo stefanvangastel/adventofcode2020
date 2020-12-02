@@ -4,14 +4,14 @@ import re
 # Read file lines into lines var
 with open('input.txt', 'r') as inputFile: lines = inputFile.readlines() 
 
+# Compile regex to match components per line. Use groups, check out the design doc: https://regex101.com/r/54OkcH/1
+expression = re.compile(r'(\d+)-(\d+)\s+([a-zA-Z]+):\s+([a-zA-Z]+)')
+
 # Part 1
 def part1(lines):
         
     # Init counter
-    correctPwds = 0
-
-    # Compile regex to match components per line. Use groups, check out the design doc: https://regex101.com/r/54OkcH/1
-    expression = re.compile(r'(\d+)-(\d+)\s+([a-zA-Z]+):\s+([a-zA-Z]+)')
+    correctPwds = 0    
 
     # loop
     for line in lines:
@@ -25,7 +25,7 @@ def part1(lines):
         #occurences of char in pwd
         occ = pwd.count(char)
 
-        #Check pwds
+        #Check pwds for rules
         if occ >= int(min) and occ <= int(max):
             correctPwds += 1
 
