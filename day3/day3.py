@@ -45,13 +45,11 @@ def gimmeTrees( pattern: dict ):
     return count
 
 ### Answer
-slopes = [
-    {'right':3,'down':1}, # 3a
-    {'right':1,'down':1},
-    {'right':5,'down':1},
-    {'right':7,'down':1},
-    {'right':1,'down':2}
-]
+slopes = [  {'right':3,'down':1}, # 3a
+            {'right':1,'down':1},
+            {'right':5,'down':1},
+            {'right':7,'down':1},
+            {'right':1,'down':2} ]
 
 # Antwoord 3a
 print("Antwoord 3a %s" % gimmeTrees( slopes[0] ) )
