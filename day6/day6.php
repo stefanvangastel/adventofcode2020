@@ -17,7 +17,8 @@ foreach ($lines as $k => $line){
                                     str_split( 
                                         implode( '',array_map( function ($entry) {
                                                                     return implode('', $entry);
-                                                                }, $questions
+                                                                }, 
+                                                                $questions
                                                     ) 
                                         ) 
                                     ) 
@@ -25,7 +26,12 @@ foreach ($lines as $k => $line){
                             );
 
         # Matching answers
-        $common_answers += count( call_user_func_array('array_intersect', (count($questions) == 1 ? [$questions[0],$questions[0]] : $questions) ) );
+        $common_answers +=  count( 
+                                call_user_func_array(
+                                    'array_intersect', 
+                                    (count($questions) == 1 ? [$questions[0],$questions[0]] : $questions) 
+                                ) 
+                            );
 
         # Reset
         $questions = [];
